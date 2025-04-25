@@ -61,35 +61,36 @@
     <hr />
     <section class="lancamento">
       <h1>Lançamentos</h1>
+      <div class="livros">
       <div class="primeiros">
       <ul>
       <li>
       <img src="/bela.png" alt="">
       <h4>Chain of Iron: Volume 2</h4>
       <p>Cassandra Clare</p>
-      <p>R$23.24</p>
-      <button>Comprar</button>
+      <p class="preco">R$23.24</p>
+      <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
       </li>
       <li>
         <img src="/princesa.png" alt="">
         <h4>Chain of Thorns</h4>
         <p>Cassandra Clare</p>
-        <p>R$23.24</p>
-        <button>Comprar</button>
+        <p class="preco">R$23.24</p>
+        <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
       </li>
       <li>
         <img src="/jogo.png" alt="">
         <h4>City of Fallen Angels</h4>
         <p>Cassandra Clare</p>
-        <p>R$13.94</p>
-        <button>Comprar</button>
+        <p class="preco">R$13.94</p>
+        <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
       </li>
       <li>
         <img src="/cassandra.png" alt="">
         <h4>Nona the Ninth</h4>
         <p>Cassandra Clare</p>
-        <p>R$16.84</p>
-        <button>Comprar</button>
+        <p class="preco">R$16.84</p>
+        <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
       </li>
       </ul>
     </div>
@@ -99,34 +100,52 @@
             <img src="/colson.png" alt="">
             <h4>Harlem Shuffle</h4>
             <p>Colson Whitehead</p>
-            <p>R$26.92</p>
-            <button>Comprar</button>
+            <p class="preco">R$26.92</p>
+           <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
           </li>
           <li>
             <img src="/montanha.png" alt="">
             <h4>Two Old Women</h4>
             <p>Velma Wallis</p>
-            <p>R$13.95</p>
-            <button>Comprar</button>
+            <p class="preco">R$13.95</p>
+            <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
           </li>
           <li>
             <img src="/amarelo.png" alt="">
             <h4>Carrie Soto Is Back</h4>
             <p>Taylor Jenkins Reid</p>
-            <p>R$26.04</p>
-            <button>Comprar</button>
+            <p class="preco">R$26.04</p>
+            <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
           </li>
           <li>
             <img src="/azul.png" alt="">
             <h4>Book Lovers</h4>
             <p>Emily Henry</p>
-            <p>R$15.81</p>
-            <button>Comprar</button>
+            <p class="preco">R$15.81</p>
+            <button><span class="fa-solid fa-cart-shopping"></span>Comprar</button>
           </li>
         </ul>
       </div>
-   
+    </div>
     </section>
+    <footer>
+      <div class="redes">
+      <h3>IFbooks</h3>
+        <ul>
+          <span class="fa-brands fa-square-facebook"></span>
+          <span class="fa-brands fa-square-instagram"></span>
+          <span class="fa-brands fa-square-twitter"></span>
+        </ul>
+      </div>
+      <div class="direita" >
+      <p>contato</p>
+      <ul>
+        <li> <span class="fa-solid fa-phone"></span>+55 47 40045263</li>
+        <li> <span class="fa-solid fa-clock"></span>8h às 23h - Seg a Sex</li>
+        <li> contato@ifbooks.com</li>
+      </ul>
+    </div>
+    </footer>
   </body>
 </template>
 <style scoped>
@@ -249,7 +268,69 @@ section.topicos div.icons div.vertical {
   background-color: black; 
   border-left: 2px solid;
 }
-div.primeiros{
-  display: flex; /*errado*/
+div.primeiros ul{
+  display: flex;
+}
+div.primeiros ul li{
+  margin: 0 2vw 0 5vw;
+  list-style: none;
+}
+div.segundos ul{
+  display: flex;
+}
+div.segundos ul li{
+  margin: 0 2vw 0 5vw;
+  list-style: none;
+}
+section.lancamento h1 {
+  margin: 4vw 0 3vw 7vw;
+  font-size: 2rem;
+}
+section.lancamento div.livros ul li h4{
+  font-size: 1.2rem;
+}
+section.lancamento div.livros ul li p.preco{
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  color: black;
+}
+section.lancamento div.livros ul li p{
+  color: #4F4C57;
+}
+section.lancamento div.livros ul li button{
+  padding: 1vw 5vw 1vw 5vw;
+  background-color: #27AE60;
+  color: white;
+  border: none;
+  font-size: 1rem;
+}
+section.lancamento div.livros ul li button span{
+  margin: 0 5px 0 0;
+  font-size: 1rem;
+}
+footer{
+  background: #27AE60;
+  height: 15vw;
+  margin: 12vw 0 0 0;
+  color: white;
+}
+footer h3{
+  color: white;
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 2vw 0 0 2vw;
+}
+footer span{
+  color: white;
+  font-size: 2rem;
+  margin: 0 1vw 0 0;
+}
+footer div.redes{
+  margin: 0 0 0 5vw;
+} 
+footer p ul li span{
+  font-size: 0.5rem;
 }
 </style>
+
