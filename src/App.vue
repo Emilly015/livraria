@@ -1,7 +1,16 @@
 <script setup>
+import { ref } from 'vue'
+
+const mostrarCarrinho = ref(false)
+
+function abrirCarrinho(){
+  mostrarCarrinho.value = true
+} 
+function voltarhome(){
+  mostrarCarrinho.value = false
+}
 </script>
 <template>
-
   <body>
     <header>
       <nav>
@@ -23,13 +32,14 @@
         </div>
         <div class="icones">
           <ul>
-            <li><span class="fa-solid fa-cart-shopping"> |</span></li>
+            <li @click="abrirCarrinho"><span class="fa-solid fa-cart-shopping"> |</span></li>
             <li><span class="fa-solid fa-heart"> |</span></li>
             <li><span class="fa-solid fa-user"> |</span></li>
           </ul>
         </div>
       </nav>
     </header>
+    <main v-if="!mostrarCarrinho">
     <hr />
     <section class="autor">
       <div class="book">
@@ -128,8 +138,32 @@
       </div>
     </div>
     </section>
+  </main> 
+  <section class="v-else" v-else>
+    <h4>Carrinho</h4>
+    <div class="titulos">
+      <ul>
+      <li class="titulo1">Título</li>
+      <li>Quantidade</li>
+      <li class="sub">Subtotal</li>
+      </ul>
+    </div>
+    <hr />
+    <div class="livrinhos">
+      <div>
+      <img src="/livrinho.png" alt="">
+     </div>
+    <div>
+      <h5>Chain of Iron: Volume 2</h5>
+      <p>Cassandra Clare</p>
+      <p>R$23.24</p>
+    </div>
+    </div>
+    <button @click="voltarhome">Voltar para loja</button>
+  </section>
     <footer>
-      <div class="redes">
+      <div class="footer">
+         <div class="redes">
       <h3>IFbooks</h3>
         <ul>
           <span class="fa-brands fa-square-facebook"></span>
@@ -138,13 +172,28 @@
         </ul>
       </div>
       <div class="direita" >
-      <p>contato</p>
+      <p>Contato</p>
       <ul>
         <li> <span class="fa-solid fa-phone"></span>+55 47 40045263</li>
         <li> <span class="fa-solid fa-clock"></span>8h às 23h - Seg a Sex</li>
-        <li> contato@ifbooks.com</li>
+        <li> <span class="fa-solid fa-envelope"></span>contato@ifbooks.com</li>
       </ul>
-    </div>
+      <div class="cartao">
+        <ul>
+          <li>
+            <img src="/paipal 1.png" alt="">
+          </li>
+          <li>
+            <img src="/MasterCard-Logo-1979 1.png" alt="">
+          </li>
+          <li>
+            <img src="/VISA-card-logo- 1.png" alt="">
+          </li>
+        </ul>
+      </div>
+        </div>
+      </div>
+      <p class="direitos">© Alguns direitos reservados. IFbooks 2025. </p>
     </footer>
   </body>
 </template>
@@ -180,7 +229,7 @@ header div.logo h1{
 }
 
 div.lista {
-  margin: 0 5vw 0 0;
+  margin: 0 20vw 0 0;
 }
 
 div.lista a {
@@ -309,9 +358,35 @@ section.lancamento div.livros ul li button span{
   margin: 0 5px 0 0;
   font-size: 1rem;
 }
+section.v-else{
+  margin: 10vw 0 0 5vw;
+}
+section.v-else h4{
+  color: #27AE60;
+  font-size: 2rem;
+  font-weight: bold;
+}
+section.v-else div.titulos ul{
+  display: flex;
+  list-style: none;
+  color: black;
+}
+section.v-else div.titulos ul li{
+  font-size: 1.3rem;
+}
+section.v-else div.titulos li.titulo1{
+  margin: 0 50vw 0 0;
+  color: black;
+}
+section.v-else div.titulos li.sub{
+  margin: 0 0 0 14vw;
+}
+section.v-else div.livrinhos{
+  display: flex;
+}
 footer{
   background: #27AE60;
-  height: 15vw;
+  height: 20vw;
   margin: 12vw 0 0 0;
   color: white;
 }
@@ -331,6 +406,38 @@ footer div.redes{
 } 
 footer p ul li span{
   font-size: 0.5rem;
+}
+footer div.footer{
+  display: flex;
+}
+footer div.footer div.direita{
+  margin: 0 0 0 65vw;
+}
+footer div.footer div.direita ul{
+  list-style: none;
+}
+footer div.footer div.direita ul li{
+  padding: 0 0 15px 0;
+}
+footer div.footer div.direita ul li span{
+  font-size: 1rem;
+}
+footer div.footer div.cartao ul{
+  display: flex;
+  list-style: none;
+}
+div.direita p{
+  margin: 2vw;
+}
+footer p.direitos{
+  margin: 2vw;
+  font-weight: bolder;
+  text-align: center;
+  border-top: 2px solid #FFFFFF;
+  margin-top:  30px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #F1F1F1;
 }
 </style>
 
