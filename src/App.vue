@@ -204,20 +204,28 @@ function decrementar() {
         <div class="cupom">
         <input type="" placeholder="Código do cupom">
       </div>
+      <div class="final">
       <div><button class="inserir"> Inserir Cupom</button></div>
       </div>
       <div class="tabela">
         <h5>Total da compra</h5>
-        <p>Produtos:</p>
-        <p>R$175</p>
+        <div class="espaco">
+           <p class="b">Produtos:</p>
+          <p>R$175</p>
+        </div>
         <div class="linha2"></div>
-        <p>Frete:</p>
-        <p>Grátis</p>
+        <div class="espaco">
+          <p class="b">Frete:</p>
+          <p>Grátis</p>
+        </div>
         <div class="linha2"></div>
-        <p>Total:</p>
-        <p>R$175</p>
-        <div class="linha2"></div>
+        <div class="espaco">
+           <p class="b">Total:</p>
+           <p>R$175</p>
+        </div>
+        <button>Ir para o pagamento</button>
       </div>
+    </div>
     </section>
     <footer>
       <div class="footer">
@@ -312,7 +320,7 @@ div.linha {
 }
 
 div.linha2 {
-  border-top: 1px solid #BDBDBD;
+  border-top: 1px solid rgb(53, 53, 53);
 }
 
 div.lista li.devo {
@@ -488,12 +496,40 @@ section.v-else button.inserir {
   color: white;
 }
 section.v-else div.tabela{
-  border: 1px solid gray;
+  border: 2px solid gray;
   background: white;
-  padding: 20px 50px 20px 50px;
+  width: 470px;
+  height: 324px;
+  top: 1079px;
+  left: 841px;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: 500;
-  margin: 2.5vw 0 0 1vw;
+  margin: 2.4vw 0 0 25vw;
+  padding: 0 0 0 10px;
+  
+}
+section.v-else div.tabela button{
+  padding: 20px 50px 20px 50px;
+  background-color: #27AE60;
+  border-radius: 4px;
+  color: white;
+  border: 1.7px solid white;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0 100px;
+}
+section.v-else div.tabela div.espaco{
+  display: flex;
+}
+section.v-else div.tabela div.espaco p.b{
+  margin: 0 17vw 0 0;
+}
+section.v-else div.tabela h5{
+  font-size: 1.3rem;
+}
+section.v-else div.final{
+  display: flex;
 }
 section.v-else div.inserirflex{
   display: flex;
