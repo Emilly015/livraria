@@ -1,1 +1,5 @@
-
+@import './base.css';
+html {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.5;
+  }
